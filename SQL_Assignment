@@ -1,0 +1,98 @@
+A-I
+1. create table department with columns
+   dept_no,dept_name, dept_location
+   Note:- dept_no should be primary key
+
+mysql> CREATE TEBLE department (dept_no int PRIMARY KEY, dept_name varchar(10), dept_location varchar(40)) ON DELETE CASCADE;
+mysql> DESC department;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| dept_no       | int         | NO   | PRI | NULL    |       |
+| dept_name     | varchar(10) | YES  |     | NULL    |       |
+| dept_location | varchar(40) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
+-------------------------------------------------------------------------------------------------------------------
+
+2. create table employee with columns
+   emp_no , emp_name , emp_age,emp_gender,dept_no
+   Note:- emp_no should be a primary key
+          emp_age should not be less than 18
+          emp_gender cannot be other than 'M' or 'F'
+          dept_no should be FK refering department table acno column
+          and apply on delete cascade.
+
+mysql>  CREATE TABLE ENPLOYEE(emp_no int primary key, emp_name varchar(20), emp_age int CHECK (emp_age>=18),
+        emp_gender varchar(1) CHECK(emp_gender = 'M' | emp_gender = 'F'), dept_no int, 
+        FOREIGN KEY(dept_no) REFERENCES department(dept_no));
+mysql> DESC employee;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| emp_no     | int         | NO   | PRI | NULL    |       |
+| emp_name   | varchar(20) | YES  |     | NULL    |       |
+| emp_age    | int         | YES  |     | NULL    |       |
+| emp_gender | varchar(1)  | YES  |     | NULL    |       |
+| dept_no    | int         | YES  | MUL | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+
+A-II
+ 1. create a table "Course-copy "from an existing table "Course"
+ 2. using alter table do the following(work with any table)
+  a) add 2 columns 
+  b) remove 2 coloumns
+  c) rename a column
+
+
+mysql> CREATE TABLE Course (name varchar(20), eligibility varchar(100), professor varchar(20));
+mysql> DESC Course;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| name        | varchar(20)  | YES  |     | NULL    |       |
+| eligibility | varchar(100) | YES  |     | NULL    |       |
+| professor   | varchar(20)  | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+------------------------------------------------------------------------------------------------------------------
+
+mysql> CREATE TABLE Course_copy AS SELECT name, eligibility, professor FROM Course;
+mysql> ALTER TABLE Course_copy ADD fee int, ADD id int PRIMARY KEY;
+mysql> DESC Course_copy;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| name        | varchar(20)  | YES  |     | NULL    |       |
+| eligibility | varchar(100) | YES  |     | NULL    |       |
+| professor   | varchar(20)  | YES  |     | NULL    |       |
+| fee         | int          | YES  |     | NULL    |       |
+| id          | int          | NO   | PRI | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+------------------------------------------------------------------------------------------------------------------
+
+mysql> ALTER TABLE Course_copy DROP column fee, DROP column professor;
+mysql> DESC Course_copy;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| name        | varchar(20)  | YES  |     | NULL    |       |
+| eligibility | varchar(100) | YES  |     | NULL    |       |
+| id          | int          | NO   | PRI | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+------------------------------------------------------------------------------------------------------------------
+
+mysql> ALTER table Course_copy RENAME COLUMN id TO course_id, RENAME COLUMN name TO course_name;
+mysql> DESC Course_copy;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| course_name | varchar(20)  | YES  |     | NULL    |       |
+| eligibility | varchar(100) | YES  |     | NULL    |       |
+| course_id   | int          | NO   | PRI | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
