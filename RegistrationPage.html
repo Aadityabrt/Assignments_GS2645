@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	.dropdown{
+  		position:relative;
+  		display:inline;
+  	}
+  	.dropdown-btn{
+  		margin-left: 5px;
+  		min-width: 100px;
+  		padding: 2px;
+  		font-size: 13px;
+  	}
+  	.dropdown-content{
+  		display: none;
+  		position: absolute;
+  		min-width: 160px;
+  		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  		z-index: 1;
+  	}
+  	.dropdown-content a{
+   		color: White;
+  		background-color: black;
+  		display: block;
+  	}
+  	.dropdown-content a:hover{
+  		background-color: #ddd;
+  		color: black;
+  	}
+  	.dropdown:hover .dropdown-content{
+  		margin-left: 70px;
+		display: block;  		
+  	}
+  	.dropdown:hover .dropdown-btn{
+  		background-color: #ccc;
+  	}
+  
+  	* {
+  		box-sizing: border-box;
+	}
+  
+  	body {
+  		font-family: Arial, Helvetica, sans-serif;
+  		background-color: black;
+	}
+  
+	.External {
+  		padding: 16px;
+  		background-color: #ccc;
+	}
+  
+  	hr{
+  		border: 1px solid #f1f1f1;
+  		margin-bottom: 25px;
+	}
+  
+    input[type=text], input[type=password]{
+  		width: 100%;
+        padding: 10px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+        border-radius: 5px;
+	}
+
+  	input[type=radio], input[type=checkbox] {
+		width: 10%;
+        padding: 10px;
+        margin: 10px 10px 10px 10px;
+        display: inline-block;
+        border: none;
+        border-radius: 5px;
+  	}
+  
+  	.last{
+    	margin-left: 5px;
+  		padding: 10px;
+  		font-size: 13px;
+	}
+    
+    .registBtn{
+    	display: inline-block;
+    	background-color: #aaa;
+        color: black;
+        padding: 16px 20px;
+        border:none;
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .registBtn:hover {
+    	background-color: black;
+        color: white;
+    }
+    
+    .resetBtn{
+    	
+    	background-color: #aaa;
+        color: black;
+        padding: 16px 20px;
+        border:none;
+        width: 100%;
+        border-radius: 10px;
+        
+    }
+    
+    .resetBtn:hover {
+    	background-color: black;
+        color: white;
+    }
+    
+    #commentBox{
+    	height:70px;
+		border-radius: 5px;
+    }
+</style>
+</head>
+  
+<body style="background-color:white">
+	<div class="External">
+      <h1 style="text-align:center">Registration Form</h1>
+      <hr>
+        <label for="FirstName"><b>First Name</b></label>
+        <input type="text" placeholder="First Name" name="FirstName" required/>
+        
+        <label for="LastName"><b>Last Name</b></label>
+        <input type="text" placeholder="Last Name" name="LastName" required/>
+        
+        <label for="DateOfBirth"><b>Date Of Birth</b></label>
+        <input type="Date" name="DateOfBirth" required/>
+        <br>
+        <br>
+        <label for="Pwd"><b>Password</b></label>
+        <input type="password" placeholder="Password" name="pwd" required/>
+        
+        <label for="Qualification"><b>Qualification</b></label>
+        <div class="checkbox">
+          <input type="checkbox" id="10th" name="Qualification" checked/>
+          <label for="10th">10th Class</label>
+          
+          <input type="checkbox" id="12th" name="Qualification"  />
+          <label for="12th">12th Class</label>
+          
+          <input type="checkbox" id="Graduation" name="Qualification" />
+          <label for="Graduation">Graduation</label>
+          
+          <input type="checkbox" id="Post Graduation" name="Qualification" />
+          <label for="Post Graduation">Post Graduation</label>
+        </div>
+        <br>
+          
+        <label for="Gender"><b>Gender</b></label>
+        <div class="radiobutton">
+        	<input type="radio" placeholder="" id="Male" name="Gender" required/>
+        	<label for="Male">Male<label/>
+        
+            <input type="radio" placeholder="" id="Female" name="Gender" required/>
+        	<label for="Female">Female<label/>
+         </div>
+         <br>
+           
+         <label for="Country"><b>Country</b></label>
+         <div class="dropdown">
+           <button class="dropdown-btn">
+           		Select
+           </button>
+             <div class="dropdown-content">
+               <a>India</a>
+               <a>Pakistan</a>
+               <a>Bangladesh</a>
+               <a>England</a>
+               <a>Australia</a>
+             </div>
+         </div>
+         
+        <br>       
+        <br>
+        <label for="Mobile"><b>Mobile Number</b></label>
+        <input type="tel" placeholder="Mobile Number" pattern="[0-9]{10}" name="Mobile" required/> 
+        <br> 
+        <br> 
+        <label for="Email"><b>Email</b></label>
+        <input type="text" placeholder="name@example.com" name="Email" required/>        
+         
+         <br>  
+        <label for="Comment"><b>Comments</b></label>
+        <input type="text" id="commentBox" placeholder="Enter Atleast 100 words to Atmax 300 words" name="Comment" required /> 
+        
+      <hr>
+      <div class="last">
+      	<button type="submit" class="registBtn">Register</button>
+        <br>
+        <br>
+      	<button type="submit" class="resetBtn">Reset</button>
+  	  </div>
+    </div>
+	  
+</body>
+</html>
