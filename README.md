@@ -9,5 +9,11 @@
 
 <img width="669" alt="Screenshot 2023-08-20 at 3 38 02 PM" src="https://github.com/Aadityabrt/Assignments_GS2645/assets/79390836/3db5fc47-fa3f-4cac-8d1c-1e7588719103">
 
+### RegistrationPage.html
+**Problem Statement:** Registration page using HTML and CSS defined properties.
+
+
+<img width="960" alt="Screenshot 2023-08-20 at 7 53 29 PM" src="https://github.com/Aadityabrt/Assignments_GS2645/assets/79390836/5b4dc20b-0ec3-4866-ae64-22748e0751e6">
+
 
 
