@@ -1,0 +1,11 @@
+1.>
+mysql> select * from employee inner join department on employee.deptno=department.deptno inner join address on department.address_id=address.address_id; 
+
+2.>
+mysql> create table bankaccount(acc_no int primary key,acc_opened_date date, status text, balance double);
+mysql> create table transaction(acc_no int, trans_type text, trans_date date, trans_amount double, foreign
+key(acc_no) references bankaccount(acc_no));
+
+3.>
+mysql> select manager_name, sum(emp_sal) from employee group by manager_name;
+mysql> select * from (select distinct emp_sal from employee order by emp_sal desc) as x limit 3,1;
