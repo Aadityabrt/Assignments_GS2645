@@ -123,3 +123,39 @@ TEST-2: REGISTRATION PAGE
 
 </body>
 </html>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.>
+<html >
+<head>
+    <title>Example</title>
+    <link rel="stylesheet" href="Test1_File2.css">
+</head>
+<body>
+    <table border="2px solid black">
+        <tr><th>Name</th><th>Salary</th></tr>
+        <tr><td>ajay</td><td>100000</td></tr>
+        <tr><td>aaditya</td><td>25000</td></tr>
+        <tr><td>akhil</td><td>75000</td></tr>
+        <tr><td>vijay</td><td>8000</td></tr>
+        <tr><td>jacky</td><td>125000</td></tr>
+        <tr><td>blacky</td><td>95000</td></tr>
+        <tr><td>don</td><td>15000</td></tr>
+    </table>
+</body>
+</html>
+
+td{
+    width: 25%;
+}
+tr:hover{
+    border-color: red;
+    border: 10px solid lightgreen;
+    background-color: lightgreen;
+    width: 50%;
+}
+table{
+    background-color:lightgray;
+    width: 100%;
+}
