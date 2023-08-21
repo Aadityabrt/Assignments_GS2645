@@ -1,0 +1,125 @@
+TEST-1: ENLARGE IMAGE ON HOVER
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Famous Cricketers</title>
+<style>
+	*{
+	  background-color: #bbb;
+	  border-radius: 25px;
+          box-sizing: border-box;
+        }
+
+	.center{
+	 display: block;
+	 margin-left:auto;
+	 margin-right:auto;
+	}
+
+	.column{
+	  float: left;
+	  width: 25%;
+	  padding: 10px;
+	  height: 40%;
+	  border-style: solid;
+	}
+	
+	.picture{
+	 padding: 10px;
+	 align: center;
+	}	
+    
+    .picture:hover {
+		transform: scale(1.02);
+	}
+    
+    </style>
+</head>
+<body>
+
+<h1 style="text-align:center">This is a Heading</h1>
+<div class="row">
+    <div class="column">
+    	<h3>Rohit Sharma</h3>
+        <div class="picture">	  
+			<img src="../Images/RohitSharma.jpg" class="center">
+        </div>
+    </div>
+    <div class="column">
+    	<h3>Virat Kohli</h3>
+        <div class="picture">	  
+			<img src="../Images/RohitSharma.jpg" class="center">
+        </div>
+    </div>
+    <div class="column">
+    	<h3>MS Dhoni</h3>
+        <div class="picture">	  
+			<img src="../Images/RohitSharma.jpg" class="center">
+        </div>
+    </div>
+    <div class="column">
+    	<h3>Sachin Tendulkar</h3>
+        <div class="picture">	  
+			<img src="../Images/RohitSharma.jpg" class="center">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST-2: REGISTRATION PAGE 
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+<div class="External" >
+	<h1 style="text-align:center">Registration Form</h1>
+	<hr>
+    <table >
+  		<tr>
+    		<td >First Name<sup style="color:red">*</sup>:</td>
+    		<td><input type="text" placeholder="First Name" name="first" required/></td>
+  		</tr>
+  		<tr>
+    		<td>Last Name<sup style="color:red">*</sup>:</td>
+    		<td><input type="text" placeholder="Last Name" name="last" required/></td>
+  		</tr>
+        <tr>
+    		<td>Mobile Number:</td>
+    		<td><input type="number" placeholder="Mobile Number" name="mobile" required/></td>
+  		</tr>
+        <tr>
+    		<td>Email<sup style="color:red">@</sup><sup style="color:red">*</sup>:</td>
+    		<td><input type="text" placeholder="example@domain.com" name="email" required/></td>
+  		</tr>
+        <tr>
+    		<td>Date Of Birth:</td>
+    		<td><input type="date" placeholder="DOB" name="dob" required/></td>
+  		</tr>
+        <tr>
+    		<td>Password<sup style="color:red">*</sup>:</td>
+    		<td><input type="password" placeholder="Enter Password" name="password" required/></td>
+  		</tr>
+        <tr>
+    		<td>Country:</td>
+    		<td><input type="button" placeholder="Country" name="country" required/></td>
+  		</tr>
+        
+	</table>
+    
+    <hr>
+</div>
+
+</body>
+</html>
