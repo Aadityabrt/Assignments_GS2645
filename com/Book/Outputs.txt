@@ -1,0 +1,48 @@
+--------catchingError()-------------------
+Enter Book ID : A101
+Enter Book Title : Tom and Jerry
+Enter Author name : Oggy
+Enter category: "Science", "Fiction", "Technology" or "Others" : Cartoon
+Enter Price : 999
+
+Invalid Book Data Entered
+java.lang.Exception: 🔴💥 InvalidBookException 💥🔴
+
+--------searchByAuthor()-------------------
+Book exists with the requested Author 👍 and its details are 👇
+BookID : B100
+Title : HC Verma
+Author : Verma
+Category : Science
+Price : 1500.0
+
+---------searchByTitle()-------------------
+Book exists with the requested Title 👍 and its details are 👇
+BookID : B090
+Title : Java AvaDe
+Author : James
+Category : Technology
+Price : 809.0
+
+---------displayAll()-------------------
+Books Available are : 
+BookID : B090
+Title : Java AvaDe
+Author : James
+Category : Technology
+Price : 809.0
+
+BookID : B100
+Title : HC Verma
+Author : Verma
+Category : Science
+Price : 1500.0
+
+BookID : B110
+Title : Big Data
+Author : Harinder
+Category : Technology
+Price : 799.0
+
+
+Process finished with exit code 0
