@@ -1,0 +1,15 @@
+Q1. db.employee.insertOne({Name:"John Smith", Position:"Software Engineer", Department: "Engineering", Salary:85000,HireDate:"15/01/2023"})
+
+Q2. db.employee.updateMany({"Position":"Software Engineer"},{$set:{"Salary":90000}});
+
+Q3. db.employee.find({"Department":"Engineering","Salary":{$gt:80000}});
+
+Q4. db.employee.deleteMany({"Department":"Marketing"})
+
+Q5. db.orders.insertMany([{order_date: ISODate("2023-07-19T12:00:00Z"),total_price: 35000,order_by: “Aaditya”},{order_date: ISODate("2023-08-28T12:00:00Z"), total_price: 750,order_by: “Jupally”}]);
+db.Orders.aggregate([ { $match: { OrderDate:{ $gte: ISODate("2023-06-01T00:00:00Z"), $lt: ISODate("2023-09-12T00:00:00Z") } } }, { $group: { _id: null, totalRevenue: { $sum: "$total_price"}}}] )
+
+Q6.
+db.products.insertOne({"product_code":123, "product_name":"Chocolate", "product_category":"Sweet","product_price":200,"product_quantity":12});
+db.products.createIndex({"product_code":1});
+db.products.getIndexes();
