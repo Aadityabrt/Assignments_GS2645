@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartify</title>
+    <style>
+        body, h1, h2, p {
+            margin: 10;
+            padding: 0;
+        }
+        h1{
+            text-align:center;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        category-main{
+			margin-left: 1200px;
+		}
+
+        category-list{
+        	display: flex;
+            flex-wrap: wrap;
+        }
+
+        product-main {
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .order-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .order {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 25%;
+        }
+
+        .order h2 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .order p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Cartify</h1>
+</header>
+<main>
+    <h1>Your Orders 🙌🏻</h1>
+    <div class="order-list">
+        <th:block th:each="order : ${orders}">
+            <div class="order" >
+                <h2 th:text="'Order ID : ' + ${order.orderId}" ></h2>
+                <p>Is placed for</p>
+                <h2 th:text="${order.fullName}"></h2>
+                <p>To Address 👇</p>
+                <h3 th:text="${order.address}"></h3>
+                <h3 th:text="'Total : ₨' + ${order.orderTotal}"></h3>
+            </div>
+        </th:block>
+    </div>
+</main>
+
+</body>
+</html>

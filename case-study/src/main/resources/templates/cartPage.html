@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shopping Cart</title>
+    <style>
+        body, h1, h2, p, ul, li, button {
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            text-align:center;
+        }
+        h3{
+           text-align:center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Cart item row */
+        tr.cart-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Buttons */
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Proceed to checkout button */
+        .checkout-button {
+            display: block;
+            width: 115px;
+            height: 55px;
+            background: #4E9CAF;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            line-height: 25px;
+
+        }
+
+        .checkout-button:hover {
+            background-color: #28a745;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>🛒 Shopping Cart 🛒</h1>
+<main>
+    <div class="cart">
+        <table>
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${cartItems}">
+                <td th:text="${item.productId.name}"></td>
+                <td th:text="${item.productId.price}"></td>
+                <td th:text="${item.quantity}"></td>
+                <td th:text="${item.productId.price}"></td>
+                <td>
+                    <!--
+                    <button th:onclick="'updateCartItem(\'' + ${item.productId.productId} + '\', 1)'">+</button>
+                    <button th:onclick="'updateCartItem(\'' + ${item.productId.productId} + '\', -1)'">-</button>
+                    <button th:onclick="'removeCartItem(\'' + ${item.productId.productId} + '\')'">Remove</button>
+                    -->
+                    <form th:action="@{'/updateCartItem/increment/' + ${item.productId.productId} + '/' + ${item.quantity}}" method="post" style="display:inline">
+                        <button type="submit" name="action" value="increment">+</button>
+                    </form>
+
+                    <form th:action="@{'/updateCartItem/decrement/' + ${item.productId.productId} + '/' + ${item.quantity}}" method="post" style="display:inline">
+                        <button type="submit" name="action" value="decrement">-</button>
+                    </form>
+
+                    <form th:action="@{'/removeCartItem/' + ${item.productId.productId}}" method="post" style="display:inline">
+                        <button type="submit" name="action" value="remove">Remove</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="cart-total">
+            <h3>Total: ₹<span th:text="${cartTotal}"></span></h3>
+        </div>
+
+        <div align="center">
+        <a href="/checkout" class="checkout-button">Proceed to Checkout</a>
+        </div>
+
+    </div>
+</main>
+
+
+</body>
+</html>
+

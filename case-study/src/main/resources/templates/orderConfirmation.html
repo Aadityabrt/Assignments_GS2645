@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartify</title>
+    <style>
+        body, h1, h2, p {
+            margin: 10;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        category-main{
+			margin-left: 1200px;
+		}
+
+        category-list{
+        	display: flex;
+            flex-wrap: wrap;
+        }
+
+        product-main {
+
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product-list {
+            align:center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .product {
+            margin: auto;
+          width: 50%;
+          border: 3px solid green;
+          padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+
+        }
+
+
+        .product h2 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 1rem;
+        }
+        button {
+          background-color: #04AA6D;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          opacity: 0.9;
+    }
+
+    button:hover {
+      opacity:1;
+    }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Cartify</h1>
+</header>
+<main>
+<!--    <div class="product-list">-->
+<!--        <th:block th:each="ord : ${order}" action="addToCart">-->
+            <div class="product" th:object="${orders}">
+                <h2 th:text="'Order ID : ' + ${orders.orderId}" ></h2>
+                <!-- <img th:src="@{/images/Tajmahal.jpg}" alt="Product Image"> -->
+                <p>Is placed for</p>
+                <h2 th:text="${orders.fullName}"></h2>
+                <p>To Address 👇</p>
+                <h3 th:text="${orders.address}"></h3>
+                <h3 th:text="'Total : ₨' + ${orders.orderTotal}"></h3>
+            </div>
+
+            <form class="clearfix" th:action="@{'/allOrders'}" method="post">
+                <button type="submit" class="placeordrbtn">Get All Orders</button>
+            </form>
+
+<!--    </div>-->
+</main>
+
+</body>
+</html>
+

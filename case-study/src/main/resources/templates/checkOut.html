@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    h1,h3 {
+        text-align:center;
+    }
+
+    input[type=text]{
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=text]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    button:hover {
+      opacity:1;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    .placeordrbtn {
+         width: 100%;
+      }
+
+     hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+</style>
+<head>
+    <title>Order</title>
+</head>
+<body>
+<h1>💥 One Step To go 💥</h1>
+<form action="/processOrder" method="post">
+    <div class="container">
+        <h3>Please fill in this form to order 👇</h3>
+        <hr>
+        <tr class="required">Full Name</tr>
+        <td><input type="text" name="fullName" required></td><br>
+        <tr class="required">Address</tr>
+        <td><input type="text" name="address"></td><br>
+        <hr>
+        <div class="clearfix">
+            <button type="submit" class="placeordrbtn">Place Order</button>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>
+
